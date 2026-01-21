@@ -38,7 +38,7 @@
         a:hover { color: #8a6b3e; }
 
         .container {
-            max-width: 960px; /* Taslak görseldeki gibi derli toplu genişlik */
+            max-width: 960px;
             margin: 0 auto;
             padding: 0 25px;
         }
@@ -47,7 +47,7 @@
         .site-header {
             background: var(--bg-card);
             border-bottom: 1px solid var(--border-color);
-            padding: 25px 0;
+            padding: 20px 0; /* Padding biraz azaltıldı */
             box-shadow: 0 2px 15px rgba(0,0,0,0.03);
             position: sticky;
             top: 0;
@@ -67,12 +67,30 @@
             display: flex;
             align-items: center;
         }
-        /* Gül Motifi İkonu */
+
+        /* --- GÜNCELLENMİŞ DAHA BELİRGİN GÜL MOTİFİ --- */
+        .rose-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(176, 141, 87, 0.1); /* Vurgu renginin çok açık hali arka plan */
+            border-radius: 50%;
+            border: 2px solid var(--accent-color); /* Belirgin çerçeve */
+            margin-left: 15px;
+            box-shadow: 0 4px 10px rgba(176, 141, 87, 0.2); /* Hafif altın gölge */
+            transition: transform 0.3s ease;
+        }
+        .rose-badge:hover {
+            transform: rotate(15deg) scale(1.05); /* Üzerine gelince hafif hareket */
+        }
         .rose-icon {
             color: var(--accent-color);
-            margin-left: 12px;
-            font-size: 1.3rem;
+            font-size: 1.4rem; /* İkon boyutu büyütüldü */
         }
+        /* ------------------------------------------- */
+
         .main-nav {
             display: flex;
             gap: 30px;
@@ -206,6 +224,7 @@
             .profile-photo { width: 180px; height: 180px; }
             h2 { text-align: center; } h2::after { left: 50%; transform: translateX(-50%); }
             .news-item { flex-direction: column; gap: 5px; }
+            .site-title { flex-direction: column; gap: 10px; } /* Mobilde isim ve logoyu alt alta al */
         }
     </style>
 </head>
@@ -215,7 +234,9 @@
     <div class="container header-content">
         <div class="site-title">
             Dr. Gül Tahaoğlu
-            <i class="fas fa-spa rose-icon" title="Gül Motifi"></i>
+            <span class="rose-badge" title="Gül Motifi">
+                <i class="fas fa-spa rose-icon"></i>
+            </span>
         </div>
         <nav class="main-nav">
             <a href="#about">Hakkında</a>
