@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Öğr. Üyesi Gül Tahaoğlu | Kişisel Web Sitesi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* GENEL AYARLAR */
+        :root {
+            --primary-color: #1a4f78; /* KTÜ Kurumsal Mavisine yakın ton */
+            --accent-color: #d35400;  /* Vurgu rengi (Turuncu) */
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* NAVBAR (MENÜ) */
+        nav {
+            background-color: var(--primary-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            width: 85%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        nav ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.05rem;
+            transition: color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover {
+            color: #ffcc00; /* Hover rengi */
+        }
+
+        /* HERO (PROFİL) BÖLÜMÜ */
+        #home {
+            background: var(--card-bg);
+            padding: 4rem 0;
+            text-align: center;
+            border-bottom: 4px solid var(--accent-color);
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid var(--bg-color);
+            box-shadow: 0 0 20px rgba(0,0,0,0.15);
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            margin: 0.5rem 0;
+            color: var(--primary-color);
+            font-size: 2.2rem;
+        }
+
+        .title {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .uni-name {
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        /* İÇERİK BÖLÜMLERİ */
+        section {
+            background: var(--card-bg);
+            margin: 2rem 0;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        /* ETİKETLER (TAGS) */
+        .tags span {
+            display: inline-block;
+            background: #eef2f5;
+            color: var(--primary-color);
+            padding: 5px 15px;
+            margin: 5px 5px 5px 0;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid #ddd;
+        }
+
+        /* NEWS / YAYINLAR LİSTESİ (SİNEMASLANX TARZI) */
+        .news-item {
+            position: relative;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            background: #fff;
+            border: 1px solid #eee;
+            border-left: 4px solid var(--accent-color);
+            transition: all 0.3s ease;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .news-item:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateX(5px);
+        }
+
+        .news-date {
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 0.5rem;
+            display: block;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .news-item h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.2rem;
+            color: #2c3e50;
+        }
+
+        .journal-name {
+            font-style: italic;
+            color: var(--primary-color);
+        }
+
+        /* BUTTON */
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #143d5e;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--primary-color);
+            color: rgba(255,255,255,0.8);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+
+        /* MOBİL */
+        @media(max-width: 768px) {
+            .container { width: 92%; }
+            h1 { font-size: 1.8rem; }
+            nav ul li { display: block; margin: 10px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#home">Ana Sayfa</a></li>
+                <li><a href="#about">Hakkında</a></li>
+                <li><a href="#publications">Yayınlar & Haberler</a></li>
+                <li><a href="#contact">İletişim</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="home">
+        <div class="container">
+            <img src="https://via.placeholder.com/200?text=GT" alt="Dr. Gül Tahaoğlu" class="profile-img">
+            
+            <h1>Dr. Öğr. Üyesi Gül Tahaoğlu</h1>
+            <p class="title">Bilgisayar Mühendisliği Bölümü</p>
+            <p class="uni-name">Karadeniz Teknik Üniversitesi (KTÜ)</p>
+            
+            <div style="margin-top: 1.5rem;">
+                <a href="https://avesis.ktu.edu.tr/gultahaoglu" target="_blank" class="btn"><i class="fas fa-university"></i> AVESİS Profil</a>
+                <a href="https://scholar.google.com/citations?user=eioRC-MAAAAJ" target="_blank" class="btn" style="background:#dd4b39;"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <section id="about">
+            <h2>Hakkında & Araştırma Alanları</h2>
+            <p>
+                Karadeniz Teknik Üniversitesi, Bilgisayar Mühendisliği Bölümü'nde Doktor Öğretim Üyesi olarak görev yapmaktayım. 
+                Akademik çalışmalarım temel olarak <strong>Siber Güvenlik</strong> ve <strong>Yapay Zeka</strong> kesişiminde yer almaktadır.
+                Özellikle dijital medya içeriklerinin güvenilirliği, sahte içerik tespiti ve multimedya adli bilişimi üzerine yoğunlaşmaktayım.
+            </p>
+            
+            <div class="tags" style="margin-top: 1.5rem;">
+                <span><i class="fas fa-shield-alt"></i> Multimedya Güvenliği</span>
+                <span><i class="fas fa-search"></i> Multimedya Adli Bilişimi</span>
+                <span><i class="fas fa-robot"></i> Deepfake Tespiti</span>
+                <span><i class="fas fa-image"></i> Görüntü İşleme</span>
+                <span><i class="fas fa-brain"></i> Yapay Zeka</span>
+                <span><i class="fas fa-database"></i> Veri Yapıları</span>
+            </div>
+        </section>
+
+        <section id="publications">
+            <h2>Güncel Yayınlar & Gelişmeler</h2>
+            <p style="margin-bottom: 20px; color: #666;">Son dönemde yayınlanan akademik çalışmalar ve makaleler:</p>
+
+            <div class="news-item">
+                <span class="news-date">2025 (Kabul Edildi)</span>
+                <h3>Deepfake audio detection with spectral features and ResNeXt-based architecture</h3>
+                <p>Knowledge-Based Systems dergisinde yayınlanmak üzere kabul edilen çalışmamızda, spektral özellikler ve ResNeXt mimarisi kullanılarak sahte ses tespiti üzerine yeni bir yöntem önerilmiştir.</p>
+                <div class="journal-name">Knowledge-Based Systems, Elsevier</div>
+            </div>
+
+            <div class="news-item">
+                <span class="news-date">Ocak 2024</span>
+                <h3>Audio forgery detection and localization with super-resolution spectrogram</h3>
+                <p>Süper çözünürlüklü spektrogramlar ve anahtar nokta tabanlı kümeleme yaklaşımı ile ses sahteciliği tespiti ve lokalizasyonu.</p>
+                <div class="journal-name">The Journal of Supercomputing, Springer</div>
+            </div>
+
+            <div class="news-item">
+                <span class="news-date">2023</span>
+                <h3>Robust copy-move forgery detection technique</h3>
+                <p>Görüntü bozunumlarına ve geometrik bozulma saldırılarına karşı dirençli kopyala-taşı sahteciliği tespit tekniği üzerine çalışmamız.</p>
+                <div class="journal-name">Wireless Personal Communications</div>
+            </div>
+
+            <div class="news-item">
+                <span class="news-date">Konferans Bildirisi</span>
+                <h3>Forge audio detection using keypoint features on mel spectrograms</h3>
+                <p>Mel spektrogramları üzerinde anahtar nokta özellikleri kullanılarak sahte ses tespiti.</p>
+                <div class="journal-name">45th International Conference on Telecommunications and Signal Processing</div>
+            </div>
+
+        </section>
+
+        <section id="contact">
+            <h2>İletişim</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                <div style="flex: 1; min-width: 250px;">
+                    <p><strong><i class="fas fa-map-marker-alt"></i> Adres:</strong><br>
+                    Karadeniz Teknik Üniversitesi,<br>
+                    Mühendislik Fakültesi,<br>
+                    Bilgisayar Mühendisliği Bölümü,<br>
+                    Trabzon, Türkiye</p>
+                </div>
+                <div style="flex: 1; min-width: 250px;">
+                    <p><strong><i class="fas fa-envelope"></i> E-Posta:</strong><br>
+                    gultahaoglu@ktu.edu.tr</p>
+                    
+                    <p><strong><i class="fas fa-globe"></i> Web:</strong><br>
+                    <a href="https://avesis.ktu.edu.tr/gultahaoglu" style="color:var(--accent-color);">avesis.ktu.edu.tr/gultahaoglu</a></p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Dr. Gül Tahaoğlu. Tüm hakları saklıdır. | KTÜ Bilgisayar Mühendisliği</p>
+    </footer>
+
+</body>
+</html>
