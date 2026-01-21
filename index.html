@@ -47,7 +47,7 @@
         .site-header {
             background: var(--bg-card);
             border-bottom: 1px solid var(--border-color);
-            padding: 20px 0; /* Padding biraz azaltıldı */
+            padding: 25px 0;
             box-shadow: 0 2px 15px rgba(0,0,0,0.03);
             position: sticky;
             top: 0;
@@ -58,38 +58,26 @@
             justify-content: space-between;
             align-items: center;
         }
+        .site-title-wrapper {
+            display: flex;
+            align-items: center;
+        }
         .site-title {
             font-family: var(--font-heading);
             font-size: 1.6rem;
             font-weight: 700;
             color: var(--primary-color);
             margin: 0;
-            display: flex;
-            align-items: center;
         }
-
-        /* --- GÜNCELLENMİŞ DAHA BELİRGİN GÜL MOTİFİ --- */
-        .rose-badge {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            background-color: rgba(176, 141, 87, 0.1); /* Vurgu renginin çok açık hali arka plan */
-            border-radius: 50%;
-            border: 2px solid var(--accent-color); /* Belirgin çerçeve */
-            margin-left: 15px;
-            box-shadow: 0 4px 10px rgba(176, 141, 87, 0.2); /* Hafif altın gölge */
-            transition: transform 0.3s ease;
+        
+        /* --- YENİ GÜL MOTİFİ (SVG) --- */
+        .rose-svg-icon {
+            width: 28px; /* Boyut */
+            height: 28px;
+            fill: var(--accent-color); /* Vurgu rengi ile boyama */
+            margin-left: 12px;
+            vertical-align: middle;
         }
-        .rose-badge:hover {
-            transform: rotate(15deg) scale(1.05); /* Üzerine gelince hafif hareket */
-        }
-        .rose-icon {
-            color: var(--accent-color);
-            font-size: 1.4rem; /* İkon boyutu büyütüldü */
-        }
-        /* ------------------------------------------- */
 
         .main-nav {
             display: flex;
@@ -224,7 +212,6 @@
             .profile-photo { width: 180px; height: 180px; }
             h2 { text-align: center; } h2::after { left: 50%; transform: translateX(-50%); }
             .news-item { flex-direction: column; gap: 5px; }
-            .site-title { flex-direction: column; gap: 10px; } /* Mobilde isim ve logoyu alt alta al */
         }
     </style>
 </head>
@@ -232,11 +219,10 @@
 
 <header class="site-header">
     <div class="container header-content">
-        <div class="site-title">
-            Dr. Gül Tahaoğlu
-            <span class="rose-badge" title="Gül Motifi">
-                <i class="fas fa-spa rose-icon"></i>
-            </span>
+        <div class="site-title-wrapper">
+            <h1 class="site-title">Dr. Gül Tahaoğlu</h1>
+            <svg class="rose-svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path d="M269.4 157.5c-3.1-7.8-10.3-12.7-18.4-13.8c-44.5-5.5-86.3 21.6-95.3 26.9c-3.7-2-7.6-3.9-11.7-5.6c-40-16.5-88-24-136-21.3c-4.6 .3-8 4.1-8 8.7c.1 35.3 7.5 68.5 20.2 98.1c18.4 42.7 51.7 80.5 104.3 117.9l0 0 .3 .2c.2 .2 .4 .3 .6 .4l0 0 .3 .2c20.4 14.3 42.6 25.9 65.7 34.6l35.3 13.2c5.4 2 11.3 .1 14.7-4.5l62.1-85.8c2.9-4 3.6-9.3 1.8-13.9l-18.9-48.5c-.1-.4-.3-.7-.4-1.1L269.4 157.5zM178.9 189.5c6-3.5 35.5-20.1 70.6-16l10.4 26.7L178.9 189.5zm22.5 238.1c-57.1-25.3-99.5-66-122.4-113.2C68 291.7 60.3 265.2 55.7 237c43.4-3.9 87.3 2.6 124.2 17.9c3.3 1.4 6.5 2.9 9.6 4.5c-.2 .2-.5 .3-.7 .5l-2.4 1.8c-.1 .1-.3 .2-.4 .3L175 269.3c-15.2 11.6-17.2 33.3-4.3 47.4L193 341.2l-3.3 8.5c-2.8 7.1-1.2 15.2 4.3 20.8l28.3 29.1-20.9 28zM268 343c3.5-1.4 5.9-4.4 6.6-8.1l5.6-32.2c1.4-8.1 11.2-11.9 17.8-6.8l34.3 26.2c6.3 4.8 7.3 13.9 2.2 20l-16.9 20.4c-4 4.9-10.3 7.2-16.6 6.2l-30.4-5c-1.6-.3-3.2-.5-4.8-.6H266c.9-6.3 1.4-12.9 1.4-19.7c0-22.7-4.9-44.2-13.7-63.6L268 343zM283 177.5L258.6 240c-2.1 5.3-7.4 8.5-12.9 8c-20.8-2.2-41-1.4-60.5 2.5l31.9-79.3c3.6-8.9 13.8-13.3 22.8-9.8c20.6 8.2 36.3 11.3 43.2 16zM122.3 442.5l0 0 0 0c-.1 .1-.3 .1-.4 .2c-.1 0-.1 0-.2 0c-8.8 4.2-17.5 8-26.1 11.3l-31.5 12.1c-5.4 2-11.3 .1-14.7-4.5L8.3 408.3c-3-4.2-3.8-9.5-2.2-14.3l26.8-78.3c1.6-4.8 5.5-8.4 10.4-9.6l14.7-3.6c1.6 8 3.6 16.4 6 25c11.2 41 29.4 79.7 52.9 114.3l0 0 .1 .1c.3 .4 .5 .7 .8 1.1L122.3 442.5zM504.3 405.6c-2.8-6.9-10.3-10.8-17.5-9l-64.3 16.4c-5.2 1.3-9.2 5.6-10.2 10.9l-3.7 20.1c-1.6 8.5-9.2 14.4-17.8 13.6l-61.5-5.5c-10.9-1-16.8-13.9-10.2-22.6l59.9-78.5c3-4 3.9-9.1 2.5-13.9l-16.5-57.1c-1.9-6.6-7.7-11.2-14.5-11.6l-32.5-1.9c-8.9-.5-15.9 6.3-16.5 15.1c-.7 11.5-2 26.1-5.1 42.6c-4.4 23.8-12 46.6-22.4 68l32.9 59.3c2.9 5.3 2.2 11.9-1.9 16.4l-33.2 37c-4.2 4.6-10.3 7-16.4 6.2L186 490c-10-1.2-17-10.4-15.5-20.4l3.8-26.9c.8-5.4-1.8-10.7-6.3-13.5l-41.9-25.5c-6.8-4.1-10.3-12.3-8.6-20.1l5.5-25.5c-9.1-10.6-16.9-21.7-23.5-33.3l-3.4-6c-16.1-28.1-27.2-58.6-32.5-90.4l-5.3 1.3c-11.1 2.8-22.3-3.8-25.1-14.9S41 191.9 52.1 189.1l14.9-3.7c5.4-27.9 17-54.6 34.2-78c5.8-8 13.5-14.3 22.4-18.3c4.2-1.9 8.5-3.4 12.9-4.5l18.6-75.3c1.6-6.4 7.2-11.1 13.8-11.3l29.4-.9c6.5-.2 12.3 3.9 14.4 10.1l10.6 30.3c13.6 6.8 26 15.3 36.8 25.3l46.8-22.2c4.5-2.1 9.8-2 14.2 0l88.5 41.3c7 3.3 10.6 11.2 8.4 18.7L413 119.4c8.1 18.8 12.7 39.7 13.1 61.5L448 196c4.4 4.4 6 11 4 16.9L431.8 273c8.2 20 11.7 41.9 10 63.8l15.9 4.6c10.6 3.1 16.7 14.2 13.6 24.8s-14.2 16.7-24.8 13.6l-8.4-2.4c-1.7 15.5-5.6 30.8-11.6 45.5l13.3 25c2.6 4.8 2.8 10.6 .4 15.5s-7.2 8-12.5 8h-29.1l36.4 29.1c4.3 3.4 6.5 8.8 5.8 14.3s-4.4 10.2-9.6 11.9l-17.5 5.8zm-99-328.6c0 30.3-9 58.3-24.6 81.8l25.1-13.3c3.2-1.7 5.7-4.5 7-7.9l19.9-52.9c2.6-7 9.1-11.8 16.5-12.3l75.5-4.8c7.9-.5 15.3 3.6 18.6 10.8s2.5 15.4-2.6 21.7l-54.4 67.4c-3.9 4.8-5 11.3-2.7 17s7.4 9.2 13.4 8.8L587 191c7.7-.5 14.9 3.5 18.3 10.5s2.8 15.3-2 21.7l-58.3 78.3c-3.5 4.7-5.3 10.5-4.9 16.3c1 15.5 5 30.4 11.5 44.2l3.8 8.2c3.6 7.6 3.4 16.6-1 24.1s-11.4 12.1-19.7 12.1H456.4c-5.4 0-10.6-2.3-14.2-6.4L422 376.3c-4-4.6-6-10.7-5.6-16.8c1.6-22.6-1.2-45.4-8.3-67l56.1 16c8.5 2.4 17.5 .5 24.2-5.2s9.7-14.4 8.1-23l-13.5-72.3c-1.6-8.4-7.3-15.1-15.1-17.9L401.8 168c4.4-13.6 6.9-28.1 7.3-43z"/></svg>
         </div>
         <nav class="main-nav">
             <a href="#about">Hakkında</a>
