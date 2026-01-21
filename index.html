@@ -5,224 +5,219 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Gül Tahaoğlu | KTÜ Bilgisayar Mühendisliği</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* --- ZARİF RENK PALETİ (GÜL KURUSU TEMASI) --- */
+        /* --- PROFESYONEL TEMA AYARLARI --- */
         :root {
-            --primary-text: #2c3e50;    /* Koyu Lacivert/Gri */
-            --secondary-text: #546e7a;  /* Yumuşak Gri */
-            /* BURASI ÖNEMLİ: Gül Kurusu / Rose Gold Vurgu Rengi */
-            --accent-color: #b06c74;    
-            --bg-body: #fcfcfc;
-            --bg-card: #ffffff;
-            --border-light: #eaeaea;
+            /* Renk Paleti: Ciddi Lacivert ve Zarif Bronz/Altın */
+            --primary-color: #2c3e50;   /* Koyu Ana Metin */
+            --secondary-color: #4a6572; /* İkincil Metin (Gri-Mavi) */
+            --accent-color: #b08d57;    /* Vurgu Rengi (Bronz/Altın) */
+            --bg-body: #fdfdfd;         /* Çok açık kırık beyaz arka plan */
+            --bg-card: #ffffff;         /* Kart arka planı (Tam beyaz) */
+            --border-color: #ececec;
+            
+            --font-heading: 'Lora', serif;     /* Başlıklar için şık font */
+            --font-body: 'Montserrat', sans-serif; /* Gövde metni için okunaklı font */
         }
 
         html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Lato', sans-serif;
+            font-family: var(--font-body);
             margin: 0;
             padding: 0;
             background-color: var(--bg-body);
-            color: var(--primary-text);
-            line-height: 1.8; /* Satır aralarını açarak ferahlık kattım */
+            color: var(--primary-color);
+            line-height: 1.7;
         }
 
         a { text-decoration: none; color: var(--accent-color); transition: all 0.3s ease; }
-        a:hover { color: #8a4b53; text-decoration: underline; }
+        a:hover { color: #8a6b3e; }
 
         .container {
-            max-width: 900px; /* Okuma kolaylığı için ideal genişlik */
+            max-width: 960px; /* Taslak görseldeki gibi derli toplu genişlik */
             margin: 0 auto;
-            padding: 0 30px;
+            padding: 0 25px;
         }
 
-        /* --- SADE VE ŞIK HEADER --- */
+        /* --- HEADER (ÜST MENÜ) --- */
         .site-header {
             background: var(--bg-card);
-            padding: 30px 0;
-            border-bottom: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-color);
+            padding: 25px 0;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.03);
             position: sticky;
             top: 0;
             z-index: 1000;
-            opacity: 0.98;
         }
-        
-        .header-inner {
+        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
-        .brand {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+        .site-title {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
             font-weight: 700;
-            color: var(--primary-text);
-            letter-spacing: 0.5px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 25px;
-        }
-
-        .nav-links a {
-            font-size: 0.9rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--secondary-text);
-            padding-bottom: 5px;
-            border-bottom: 2px solid transparent;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-color);
-            text-decoration: none;
-            border-bottom: 2px solid var(--accent-color);
-        }
-
-        /* --- HERO (PROFİL) ALANI --- */
-        #about {
-            padding: 80px 0;
-            border-bottom: 1px solid var(--border-light);
-        }
-
-        .profile-wrapper {
+            color: var(--primary-color);
+            margin: 0;
             display: flex;
             align-items: center;
-            gap: 60px;
         }
-
-        .avatar-frame {
+        /* Gül Motifi İkonu */
+        .rose-icon {
+            color: var(--accent-color);
+            margin-left: 12px;
+            font-size: 1.3rem;
+        }
+        .main-nav {
+            display: flex;
+            gap: 30px;
+        }
+        .main-nav a {
+            font-weight: 600;
+            color: var(--secondary-color);
+            font-size: 0.95rem;
             position: relative;
+            padding-bottom: 5px;
         }
-        
-        /* Resim Çerçevesi: İnce ve zarif bir border */
-        .profile-img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 1px solid #ddd;
-            padding: 5px; /* Beyaz boşluk */
-            background: #fff;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        .main-nav a:hover { color: var(--accent-color); }
+        .main-nav a::after {
+            content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
+            background: var(--accent-color); transition: width 0.3s;
         }
+        .main-nav a:hover::after { width: 100%; }
 
-        .bio h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin: 0 0 10px 0;
-            color: var(--primary-text);
-        }
-
-        .bio .subtitle {
-            font-size: 1.1rem;
-            font-weight: 300;
-            color: var(--secondary-text);
-            margin-bottom: 20px;
-        }
-
-        .social-bar {
-            margin-top: 20px;
-        }
-        .social-bar a {
-            font-size: 1.2rem;
-            margin-right: 20px;
-            color: var(--secondary-text);
-        }
-        .social-bar a:hover { color: var(--accent-color); }
-
-        /* --- BÖLÜM BAŞLIKLARI --- */
-        section { padding: 70px 0; border-bottom: 1px solid var(--border-light); }
+        /* --- ANA BÖLÜMLER --- */
+        section { padding: 70px 0; border-bottom: 1px solid var(--border-color); }
         section:last-child { border-bottom: none; }
 
         h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: var(--primary-text);
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--primary-color);
             margin-bottom: 40px;
             position: relative;
-            display: inline-block;
+            padding-bottom: 15px;
         }
-        
-        /* Başlık altındaki zarif çizgi (Gül kurusu renginde) */
         h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 40px;
-            height: 3px;
-            background-color: var(--accent-color);
+            content: ''; position: absolute; bottom: 0; left: 0;
+            width: 50px; height: 3px; background: var(--accent-color);
         }
 
-        /* --- KART TASARIMLARI (YAYINLAR) --- */
-        .pub-item {
-            margin-bottom: 35px;
-            transition: transform 0.2s;
+        /* --- ABOUT & HERO ALANI --- */
+        .hero-section {
+            display: flex;
+            align-items: center;
+            gap: 50px;
         }
-        .pub-item:hover { transform: translateX(5px); }
+        .profile-photo {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--bg-card);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .hero-content h1 {
+            font-family: var(--font-heading);
+            font-size: 2.4rem;
+            margin: 0 0 10px 0;
+            line-height: 1.2;
+        }
+        .hero-content .title {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+        .social-links a {
+            font-size: 1.3rem;
+            margin-right: 18px;
+            color: var(--secondary-color);
+        }
+        .social-links a:hover { color: var(--accent-color); transform: translateY(-3px); display: inline-block; }
+        .about-text p { font-size: 1.1rem; color: var(--secondary-color); }
 
-        .pub-title {
-            font-size: 1.15rem;
+        /* --- YAYINLAR & ARAŞTIRMA KARTLARI --- */
+        .item-card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 25px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .item-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            border-color: transparent;
+        }
+        .item-title {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
             font-weight: 700;
-            margin-bottom: 5px;
-            display: block;
+            margin-bottom: 12px;
         }
-        .pub-meta {
+        .item-title a { color: var(--primary-color); }
+        .item-title a:hover { color: var(--accent-color); }
+        .item-meta {
             font-size: 0.95rem;
-            color: #888;
+            color: #777;
             font-style: italic;
+            margin-bottom: 15px;
         }
-        .pub-meta .highlight { color: var(--accent-color); font-weight: 600; }
+        .item-year { font-weight: 600; color: var(--accent-color); }
 
-        /* --- HABERLER --- */
+        /* --- HABERLER (LİSTE GÖRÜNÜMÜ) --- */
+        .news-list { list-style: none; padding: 0; margin: 0; }
         .news-item {
             display: flex;
-            margin-bottom: 25px;
-            align-items: baseline;
+            padding: 20px 0;
+            border-bottom: 1px dashed var(--border-color);
         }
+        .news-item:last-child { border-bottom: none; }
         .news-date {
-            min-width: 100px;
             font-weight: 700;
-            font-size: 0.85rem;
             color: var(--accent-color);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            min-width: 110px;
+            font-size: 0.95rem;
         }
-        .news-content {
-            color: var(--secondary-text);
-        }
+        .news-content { font-size: 1.05rem; color: var(--secondary-color); }
 
         /* --- FOOTER --- */
-        footer {
-            text-align: center;
+        .site-footer {
+            background: var(--primary-color);
+            color: #aab7c4;
             padding: 40px 0;
-            font-size: 0.9rem;
-            color: #aaa;
+            text-align: center;
+            margin-top: 50px;
         }
+        .site-footer p { margin: 0; font-size: 0.9rem; }
 
         /* --- MOBİL UYUM --- */
         @media (max-width: 768px) {
-            .profile-wrapper { flex-direction: column; text-align: center; gap: 30px; }
-            .header-inner { flex-direction: column; gap: 20px; }
-            .nav-links { gap: 15px; font-size: 0.8rem; }
-            .news-item { flex-direction: column; }
+            .header-content { flex-direction: column; gap: 20px; }
+            .hero-section { flex-direction: column; text-align: center; }
+            .main-nav { gap: 15px; flex-wrap: wrap; justify-content: center; }
+            .profile-photo { width: 180px; height: 180px; }
+            h2 { text-align: center; } h2::after { left: 50%; transform: translateX(-50%); }
+            .news-item { flex-direction: column; gap: 5px; }
         }
     </style>
 </head>
 <body>
 
 <header class="site-header">
-    <div class="container header-inner">
-        <div class="brand">Dr. Gül Tahaoğlu</div>
-        <nav class="nav-links">
+    <div class="container header-content">
+        <div class="site-title">
+            Dr. Gül Tahaoğlu
+            <i class="fas fa-spa rose-icon" title="Gül Motifi"></i>
+        </div>
+        <nav class="main-nav">
             <a href="#about">Hakkında</a>
             <a href="#publications">Yayınlar</a>
             <a href="#research">Araştırma</a>
@@ -233,27 +228,27 @@
 
 <main>
     <section id="about">
-        <div class="container profile-wrapper">
-            <div class="avatar-frame">
-                <img src="assets/img/avatar.jpg" alt="Gül Tahaoğlu" class="profile-img">
-            </div>
+        <div class="container hero-section">
+            <img src="assets/img/avatar.jpg" alt="Dr. Gül Tahaoğlu" class="profile-photo">
             
-            <div class="bio">
+            <div class="hero-content">
                 <h1>Dr. Öğr. Üyesi Gül Tahaoğlu</h1>
-                <div class="subtitle">
-                    Bilgisayar Mühendisliği Bölümü<br>
-                    Karadeniz Teknik Üniversitesi
-                </div>
+                <div class="title">Bilgisayar Mühendisliği Bölümü, Karadeniz Teknik Üniversitesi (KTÜ)</div>
                 
-                <p style="color: #666; font-size: 1.05rem;">
-                    Akademik çalışmalarımı <strong>Siber Güvenlik</strong>, <strong>Yapay Zeka</strong> ve <strong>Multimedya Adli Bilişimi</strong> alanlarında sürdürmekteyim. Dijital dünyanın güvenilirliğini sağlamak adına, özellikle Deepfake tespiti ve görüntü manipülasyonları üzerine derin öğrenme tabanlı çözümler geliştirmekteyim.
-                </p>
+                <div class="social-links">
+                    <a href="mailto:gultahaoglu@ktu.edu.tr" title="E-Posta"><i class="fas fa-envelope"></i></a>
+                    <a href="https://avesis.ktu.edu.tr/gultahaoglu" target="_blank" title="AVESİS Profili"><i class="fas fa-university"></i></a>
+                    <a href="https://scholar.google.com/citations?user=eioRC-MAAAAJ" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                    <a href="https://github.com/gultahaoglu" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                </div>
 
-                <div class="social-bar">
-                    <a href="mailto:gultahaoglu@ktu.edu.tr"><i class="fas fa-envelope"></i></a>
-                    <a href="https://avesis.ktu.edu.tr/gultahaoglu" target="_blank"><i class="fas fa-university"></i></a>
-                    <a href="https://scholar.google.com/citations?user=eioRC-MAAAAJ" target="_blank"><i class="fas fa-graduation-cap"></i></a>
-                    <a href="https://github.com/gultahaoglu" target="_blank"><i class="fab fa-github"></i></a>
+                <div class="about-text" style="margin-top: 30px;">
+                    <p>
+                        Karadeniz Teknik Üniversitesi Bilgisayar Mühendisliği Bölümü'nde öğretim üyesi olarak görev yapmaktayım. Akademik çalışmalarım temel olarak <strong>Siber Güvenlik</strong>, <strong>Yapay Zeka</strong> ve <strong>Multimedya Adli Bilişimi</strong> kesişiminde yer almaktadır.
+                    </p>
+                    <p>
+                        Özellikle derin öğrenme tabanlı <strong>sahte içerik (Deepfake) tespiti</strong>, dijital görüntü ve ses sinyallerinin güvenilirliği üzerine ileri düzey analiz yöntemleri geliştirmeye odaklanmaktayım.
+                    </p>
                 </div>
             </div>
         </div>
@@ -263,57 +258,62 @@
         <div class="container">
             <h2>Seçilmiş Yayınlar</h2>
             
-            <div class="pub-item">
-                <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=eioRC-MAAAAJ&citation_for_view=eioRC-MAAAAJ:u5HHmVD_uO8C" target="_blank" class="pub-title">
-                    Deepfake audio detection with spectral features and ResNeXt-based architecture
-                </a>
-                <div class="pub-meta">
-                    <span class="highlight">2025</span> — Knowledge-Based Systems
+            <div class="item-card">
+                <div class="item-title">
+                    <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=eioRC-MAAAAJ&citation_for_view=eioRC-MAAAAJ:u5HHmVD_uO8C" target="_blank">
+                        Deepfake audio detection with spectral features and ResNeXt-based architecture
+                    </a>
                 </div>
+                <div class="item-meta">
+                    <span class="item-year">2025 (Kabul Edildi)</span> | Knowledge-Based Systems (Elsevier)
+                </div>
+                <p>Spektral özellikler ve ResNeXt mimarisi kullanılarak sahte ses tespiti üzerine yeni bir yöntem önerisi.</p>
+                <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=eioRC-MAAAAJ&citation_for_view=eioRC-MAAAAJ:u5HHmVD_uO8C" target="_blank" style="font-weight: 600; font-size: 0.9rem;">
+                    <i class="fas fa-external-link-alt"></i> Detayları Görüntüle
+                </a>
             </div>
 
-            <div class="pub-item">
-                <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=eioRC-MAAAAJ&citation_for_view=eioRC-MAAAAJ:d1gkVwhDpl0C" target="_blank" class="pub-title">
-                    Audio forgery detection and localization with super-resolution spectrogram
-                </a>
-                <div class="pub-meta">
-                    <span class="highlight">2024</span> — The Journal of Supercomputing
+            <div class="item-card">
+                <div class="item-title">
+                    <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=eioRC-MAAAAJ&citation_for_view=eioRC-MAAAAJ:d1gkVwhDpl0C" target="_blank">
+                        Audio forgery detection and localization with super-resolution spectrogram
+                    </a>
                 </div>
-            </div>
-
-            <div class="pub-item">
-                <a href="#" class="pub-title">
-                    Forge audio detection using keypoint features on mel spectrograms
-                </a>
-                <div class="pub-meta">
-                    <span class="highlight">2022</span> — TSP Conference
+                <div class="item-meta">
+                    <span class="item-year">2024</span> | The Journal of Supercomputing (Springer)
                 </div>
+                <p>Süper çözünürlüklü spektrogramlar ve anahtar nokta tabanlı kümeleme yaklaşımı ile ses sahteciliği tespiti.</p>
+                <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=eioRC-MAAAAJ&citation_for_view=eioRC-MAAAAJ:d1gkVwhDpl0C" target="_blank" style="font-weight: 600; font-size: 0.9rem;">
+                    <i class="fas fa-external-link-alt"></i> Detayları Görüntüle
+                </a>
             </div>
-
-            <a href="https://scholar.google.com/citations?user=eioRC-MAAAAJ" target="_blank" style="font-size: 0.9rem; font-weight: bold;">
-                Google Scholar Profilini Görüntüle &rarr;
-            </a>
+            
+            <div style="text-align: right; margin-top: 20px;">
+                <a href="https://scholar.google.com/citations?user=eioRC-MAAAAJ" target="_blank" style="font-weight: 600;">
+                    Tüm yayınları Google Scholar'da görüntüle <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
         </div>
     </section>
 
     <section id="research">
         <div class="container">
-            <h2>Araştırma Alanları</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+            <h2>Araştırma Odakları</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
                 
-                <div>
-                    <h3 style="color:var(--primary-text);"><i class="fas fa-fingerprint" style="color:var(--accent-color); margin-right:10px;"></i> Multimedya Güvenliği</h3>
-                    <p style="font-size:0.95rem; color:#666;">Dijital içeriklerin kaynağını doğrulama ve sahtecilik analizleri.</p>
+                <div class="item-card" style="margin-bottom: 0;">
+                    <div class="item-title"><i class="fas fa-shield-alt" style="color:var(--accent-color); margin-right: 8px;"></i> Multimedya Güvenliği</div>
+                    <p>Dijital medya (ses, görüntü, video) içeriklerinin bütünlüğünü koruma, manipülasyonları ve sahtecilikleri tespit etme yöntemleri.</p>
                 </div>
 
-                <div>
-                    <h3 style="color:var(--primary-text);"><i class="fas fa-brain" style="color:var(--accent-color); margin-right:10px;"></i> Deepfake Tespiti</h3>
-                    <p style="font-size:0.95rem; color:#666;">Yapay zeka üretimi ses ve videoların tespiti için model geliştirme.</p>
+                <div class="item-card" style="margin-bottom: 0;">
+                    <div class="item-title"><i class="fas fa-robot" style="color:var(--accent-color); margin-right: 8px;"></i> Yapay Zeka ile Deepfake Tespiti</div>
+                    <p>Üretken yapay zeka (Generative AI) tarafından oluşturulan sahte içerikleri, derin öğrenme modelleriyle otomatik olarak belirleme.</p>
                 </div>
 
-                <div>
-                    <h3 style="color:var(--primary-text);"><i class="fas fa-images" style="color:var(--accent-color); margin-right:10px;"></i> Görüntü İşleme</h3>
-                    <p style="font-size:0.95rem; color:#666;">Piksel tabanlı analizler ve adli bilişim incelemeleri.</p>
+                <div class="item-card" style="margin-bottom: 0;">
+                    <div class="item-title"><i class="fas fa-wave-square" style="color:var(--accent-color); margin-right: 8px;"></i> Akıllı Sinyal İşleme</div>
+                    <p>Karmaşık sinyal verilerinden öznitelik çıkarımı ve örüntü tanıma için yapay zeka algoritmalarının uygulanması.</p>
                 </div>
 
             </div>
@@ -322,37 +322,39 @@
 
     <section id="news">
         <div class="container">
-            <h2>Haberler</h2>
-            
-            <div class="news-item">
-                <div class="news-date">OCAK 2026</div>
-                <div class="news-content">
-                    Knowledge-Based Systems dergisinde makalemiz kabul edildi.
-                </div>
-            </div>
+            <h2>Haberler & Duyurular</h2>
+            <ul class="news-list">
+                
+                <li class="news-item">
+                    <div class="news-date">OCAK 2026</div>
+                    <div class="news-content">
+                        <em>"Deepfake audio detection..."</em> başlıklı makalemiz <strong>Knowledge-Based Systems</strong> (SCI-E) dergisinde yayınlanmak üzere kabul edilmiştir.
+                    </div>
+                </li>
 
-            <div class="news-item">
-                <div class="news-date">OCAK 2026</div>
-                <div class="news-content">
-                    Akademik web sitesi yayına açıldı.
-                </div>
-            </div>
+                <li class="news-item">
+                    <div class="news-date">OCAK 2026</div>
+                    <div class="news-content">
+                        Kişisel akademik web sitesi yayına alınmıştır.
+                    </div>
+                </li>
 
-            <div class="news-item">
-                <div class="news-date">EYLÜL 2025</div>
-                <div class="news-content">
-                    Yeni akademik yıl başlangıcı ve lisans dersleri.
-                </div>
-            </div>
+                <li class="news-item">
+                    <div class="news-date">EYLÜL 2025</div>
+                    <div class="news-content">
+                        2025-2026 Güz yarıyılında lisans ve yüksek lisans düzeyinde "Bilgisayarlı Görü" ve "Siber Güvenlik" dersleri verilmeye başlanmıştır.
+                    </div>
+                </li>
 
+            </ul>
         </div>
     </section>
-
 </main>
 
-<footer>
+<footer class="site-footer">
     <div class="container">
-        &copy; <span id="year"></span> Dr. Gül Tahaoğlu. Tüm hakları saklıdır.
+        <p>© <span id="year"></span> Dr. Gül Tahaoğlu</p>
+        <p>Bilgisayar Mühendisliği Bölümü, Karadeniz Teknik Üniversitesi, Trabzon.</p>
     </div>
 </footer>
 
